@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 
 const calcSchema = new mongoose.Schema({
+    Name:{type:String, required:true},
     Age:{type:Number, required:true},
     Height:{type:Number, required:true},
     Weight:{type:Number, required:true},
     activityLevel:{
         type:String,
-        enum:['little or no exercise', 'exercise 1-3 times/week','exercise 3-5 times/week', 'daily exercise or intense 3-5 times/week', 'very instense exercise or physical job']
+        enum:['sendentary', 'light activity','moderate activity', 'very active', 'extra active']
     },
     gender:{
         type: String,

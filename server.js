@@ -20,7 +20,7 @@ app.set('views', __dirname + '/views');
 const authController = require('./controllers/auth.js');
 const calcController = require('./controllers/calc.js');
 const PORT = process.env.PORT ? process.env.PORT : '3000';
-app.use('/users/:userId/calc', calcController);
+
 // MIDDLEWARE
 //
 // Middleware to parse URL-encoded data from forms
@@ -49,22 +49,12 @@ app.use(passUserToView);
 app.get('/', (req, res) => {
   res.render('index.ejs');
 });
-
 app.use('/auth', authController);
+
+app.use(isSignedIn)
+// Protected
 app.use('/users/:userId/calc', calcController);
 
-
-app.get('/', (req, res) => {
-  // Check if the user is signed in
-  if (req.session.user) {
-    // Redirect signed-in users to their applications index
-    res.redirect(`/users/${req.session.user._id}/calc`);
-  } else {
-    // Show the homepage for users who are not signed in
-    res.render('index.ejs');
-  }
-});
-app.use(isSignedIn)
 app.listen(PORT, () => {
   console.log(`The express app is ready on port ${PORT}!`);
 });
