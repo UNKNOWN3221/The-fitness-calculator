@@ -11,8 +11,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/new', async (req, res) => {
-  res.render('calc/new.ejs');
+router.get('/new', (req, res) => {
+    try {
+        res.render('calc/new.ejs');
+    } catch(error) {
+        console.log(error)
+    }
 });
 
 module.exports = router;

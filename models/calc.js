@@ -13,5 +13,5 @@ const calcSchema = new mongoose.Schema({
         enum:['male','female']
     },
 });
-const calc = mongoose.model('calc', calcSchema)
-module.exports = calc;
+const Calc = mongoose.model('calc', calcSchema)
+module.exports = { Calc, calcSchema };

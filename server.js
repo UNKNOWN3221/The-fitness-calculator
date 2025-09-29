@@ -52,7 +52,8 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authController);
 app.use('/users/:userId/calc', calcController);
-app.use(isSignedIn) 
+
+
 app.get('/', (req, res) => {
   // Check if the user is signed in
   if (req.session.user) {
@@ -63,6 +64,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
   }
 });
+app.use(isSignedIn)
 app.listen(PORT, () => {
   console.log(`The express app is ready on port ${PORT}!`);
 });
