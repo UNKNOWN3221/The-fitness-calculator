@@ -8,10 +8,7 @@
 <body>
     <h1>add a new record</h1>
 
-<form action="/users/<%- user._id %>/calc" method="post">
-    <label for="Name">Name:</label>
-    <input type="text" name="Name" id="Name">
-
+<form action="/users/<%- user._id %>/calc/<%= record._id %>_?method=PUT" method="POST">
     <label for="Age">Age:</label>
     <input type="number" name="Age" id="Age">
 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= record.Name %></h1>
+  <p>Age: <%= record.Age %></p>
+  <p>Height: <%= record.Height %></p>
+  <p>Weight: <%= record.Weight %></p>
+  <p>Activity Level: <%= record.activityLevel %></p>
+  <p>Gender: <%= record.gender %></p>
+  <a href="/users/<%= user._id %>/calc">Back to Apps</a>
+  <form action="/users/<%= user._id %>/calc/<%- record._id %>?_method=DELETE" method="post">
+    <button type="submit">Delete record</button>
+  </form>
+</body>
+</html>
