@@ -12,8 +12,8 @@
       <% calc.forEach(record => { %>
     <li>
       <a href="/users/<%= user._id %>/calc/<%= record._id %>">
-        <%= record.Name %>
-      </a>  
+        <%= user.username %> in <%= record.createdAt.toLocaleDateString() %>    
+      </a>
     </li>
   <% }) %>    
     </ul>

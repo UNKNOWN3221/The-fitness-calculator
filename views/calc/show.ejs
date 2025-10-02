@@ -6,12 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><%= record.Name %></h1>
-  <p>Age: <%= record.Age %></p>
-  <p>Height: <%= record.Height %></p>
-  <p>Weight: <%= record.Weight %></p>
-  <p>Activity Level: <%= record.activityLevel %></p>
-  <p>Gender: <%= record.gender %></p>
+    <label>BMI:</label>
+    <p><%= bmi %></p>
+    <% if (record.gender == 'male') { %>
+     <p><%= fatMen %></p>
+    <% } %>
+        <p><%= calories %></p>
+  
   <a href="/users/<%= user._id %>/calc">Back to Apps</a>
   <form action="/users/<%= user._id %>/calc/<%- record._id %>?_method=DELETE" method="post">
     <button type="submit">Delete record</button>

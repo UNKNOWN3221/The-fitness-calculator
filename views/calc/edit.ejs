@@ -8,7 +8,7 @@
 <body>
     <h1>add a new record</h1>
 
-<form action="/users/<%- user._id %>/calc/<%= record._id %>_?method=PUT" method="POST">
+<form action="/users/<%- user._id %>/calc" method="post">
     <label for="Age">Age:</label>
     <input type="number" name="Age" id="Age">
 
@@ -24,11 +24,16 @@
         <option value="female">female</option>
     </select>
     <select name="activityLevel" id="activityLevel">
-        <option value="sendentary">sendentary</option>
+        <option value="sedentary">sedentary</option>
         <option value="light activity">light activity, exercise 1-3 times/week</option>
         <option value="moderate activity">moderate activityexercise 4-5 times/week</option>
         <option value="very active">very activeexercise 6-7 times/week</option>
         <option value="extra active">sendentary</option>
+    </select>
+    <select name="goal" id="goal">
+        <option value="cutting">cutting</option>
+        <option value="bulking">bulking</option>
+        <option value="maintanance">maintanance</option>
     </select>
     <button type="submit">Submit</button>
 </form>
