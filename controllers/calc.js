@@ -21,7 +21,7 @@ const calcCalories = (record) => {
   const bmrMen = (10*record.Weight)+(6.25*record.Height)-(5*record.Age)+5
   const bmrWomen = (10*record.Weight)+(6.25*record.Height)-(5*record.Age)-161
   if (record.gender == 'male'){
-    if (record.activityLevel == 'sendentary'){
+    if (record.activityLevel == 'sedentary'){
       return bmrMen*1.2
     }else if (record.activityLevel == 'light activity') {
       return bmrMen*1.375
@@ -108,7 +108,7 @@ router.get('/:calcId/edit',async (req, res) => {
   try {
     const currentUser = await user.findById(req.session.user._id);
     const record = currentUser.calc.id(req.params.calcId);
-    res.render('calc/edit.ejs',{record: record},)
+    res.render('calc/edit.ejs',{record: record, user: currentUser},)
   }
   catch (error) {
     console.log(error)

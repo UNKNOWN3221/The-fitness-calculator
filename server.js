@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
   res.render('index.ejs');
 });
 app.use('/auth', authController);
-
+app.use(express.static('public'));
 app.use(isSignedIn)
 // Protected
 app.use('/users/:userId/calc', calcController);
