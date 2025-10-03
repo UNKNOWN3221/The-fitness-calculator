@@ -187,3 +187,35 @@ li a:hover {
     gap: 1em;
   }
 }
+.bmi-levels {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.bmi-levels h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bmi-levels ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bmi-levels li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.underweight { background: #3b82f6; }
+.normal { background: #22c55e; }
+.overweight { background: #facc15; color: black; }
+.obese { background: #f97316; }
+.extremely-obese { background: #dc2626; }

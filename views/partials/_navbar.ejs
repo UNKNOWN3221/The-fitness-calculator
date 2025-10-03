@@ -5,6 +5,7 @@
     <div class="nav-links">
       <% if (user) { %>
         <a href="/users/<%= user._id %>/calc">Your records</a>
+        <a href="/users/<%= user._id %>/calc/new">Add a New Record</a>
         <a href="/auth/sign-out" class="btn-logout">Sign Out</a>
       <% } else { %>
         <a href="/auth/sign-in">Sign In</a>

@@ -13,12 +13,22 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <div class="container">
-    <h1>Fitness Record Details</h1>
+    <h1>Fitness Record Details</h1> 
     <div class="record-details">
       <div class="detail-row">
         <span class="label">BMI:</span>
         <span class="value"><%= bmi %></span>
       </div>
+      <div class="bmi-levels">
+  <h2>BMI Levels</h2>
+  <ul>
+    <li class="underweight">Underweight: &lt; 18.5</li>
+    <li class="normal">Normal: 18.5 - 24.9</li>
+    <li class="overweight">Overweight: 25.0 - 29.9</li>
+    <li class="obese">Obese: 30.0 - 34.9</li>
+    <li class="extremely-obese">Extremely Obese: &gt; 35.0</li>
+  </ul>
+</div>
       <% if (record.gender == 'male') { %>
       <div class="detail-row">
         <span class="label">Body Fat %:</span>
@@ -57,13 +67,22 @@
       </div>
     </div>
     <div class="actions">
-      <a class="btn" href="/users/<%= user._id %>/calc">Back to Apps</a>
-      <form action="/users/<%= user._id %>/calc/<%- record._id %>?_method=DELETE" method="post" style="display:inline;">
-        <button class="btn btn-danger" type="submit">Delete record</button>
-        <a class="btn" href="/users/<%= user._id %>/calc/<%= record._id %>/edit">
-        Edit this application
-    </a>
-      </form>
+        <a class="action-link-back" href="/users/<%= user._id %>/calc">
+            ← Back to Records
+        </a>
+
+        <div class="action-buttons-group">
+            
+            <a class="btn-secondary" href="/users/<%= user._id %>/calc/<%= record._id %>/edit">
+                Edit Record
+            </a>
+            
+            <form action="/users/<%= user._id %>/calc/<%- record._id %>?_method=DELETE" method="post" style="display:inline;">
+                <button class="btn btn-danger" type="submit">DELETE RECORD</button>
+            </form>
+        </div>
+    </div>
+    
       
     </div>
   </div>
