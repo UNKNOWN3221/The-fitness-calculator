@@ -13,7 +13,7 @@ const calcFatMen = (record) => {
   const bmi= calculateBMI(record)
   return 1.2*bmi+0.23*record.Age-16.2
 }
-const calcFatwomen = (record) => {
+const calcFatWomen = (record) => {
   const bmi = calculateBMI(record)
   return 1.2*bmi+0.23*record.Age-5.4
 }
@@ -81,9 +81,9 @@ router.get('/:calcId', async (req, res) => {
     const record = currentUser.calc.id(req.params.calcId);
     const bmi = Number(calculateBMI(record).toFixed(1))
     const fatMen = Number(calcFatMen(record).toFixed(1))
-    const fatWomen = Number(calcFatwomen(record).toFixed(1))
+    const fatWomen = Number(calcFatWomen(record).toFixed(1))
     const calories = Number(calcCalories(record).toFixed(0))
-    res.render('calc/show.ejs', { record, user: currentUser, bmi, fatMen,fatWomen,calories });
+    res.render('calc/show.ejs', { record, user: currentUser, bmi, fatMen, fatWomen, calories });
   } catch (error) {
     console.log(error);
     res.redirect('/');

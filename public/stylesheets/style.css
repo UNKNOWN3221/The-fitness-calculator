@@ -1,11 +1,9 @@
-/* Base Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body and Typography */
 body {
   font-family: 'Roboto', Arial, sans-serif;
   background: #f4f7fb;
@@ -19,7 +17,6 @@ h1, h2 {
   margin-bottom: 1.25em;
 }
 
-/* Layout Container */
 .container {
   max-width: 700px;
   margin: 2em auto;
@@ -30,7 +27,6 @@ h1, h2 {
   transition: all 0.3s ease-in-out;
 }
 
-/* Navigation */
 nav {
   background: #007bff;
   padding: 1em 0;
@@ -38,7 +34,6 @@ nav {
   border-radius: 0 0 12px 12px;
   margin-bottom: 2em;
 }
-
 nav a {
   color: #ffffff;
   text-decoration: none;
@@ -47,12 +42,10 @@ nav a {
   font-size: 1.05em;
   transition: color 0.3s ease;
 }
-
 nav a:hover {
   color: #ffd700;
 }
 
-/* Form Styling */
 form {
   background: #fff;
   padding: 2em;
@@ -86,7 +79,16 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 4px rgba(0,123,255,0.25);
 }
 
-/* Buttons */
+select {
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-position: right 1em center;
+  padding-right: 2.5em; 
+}
+
 button, .btn {
   display: inline-block;
   background: #007bff;
@@ -102,28 +104,23 @@ button, .btn {
   text-align: center;
   text-decoration: none;
 }
-
 button:hover, .btn:hover {
   background: #0056b3;
   transform: translateY(-1px);
 }
-
 .btn-danger {
   background: #dc3545;
 }
-
 .btn-danger:hover {
   background: #b02a37;
 }
 
-/* Lists and Records */
 ul {
   list-style: none;
   padding: 0;
   margin: 2em auto;
   max-width: 700px;
 }
-
 li {
   background: #fff;
   margin-bottom: 1.2em;
@@ -134,41 +131,34 @@ li {
   justify-content: space-between;
   align-items: center;
 }
-
 li a {
   color: #007bff;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 li a:hover {
   text-decoration: underline;
   color: #0056b3;
 }
 
-/* Record Details */
 .record-details {
   margin-bottom: 2em;
 }
-
 .detail-row {
   display: flex;
   justify-content: space-between;
   padding: 0.75em 0;
   border-bottom: 1px solid #eee;
 }
-
 .label {
   font-weight: 600;
   color: #555;
 }
-
 .value {
   color: #222;
 }
 
-/* Action Buttons */
 .actions {
   display: flex;
   justify-content: space-between;
@@ -176,25 +166,22 @@ li a:hover {
   margin-top: 2em;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .container, ul {
     max-width: 95%;
     padding: 1.5em;
   }
-
   nav a {
     display: inline-block;
     margin: 0.6em;
     font-size: 1em;
   }
-
   li {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
   }
-
   .actions {
     flex-direction: column;
     gap: 1em;

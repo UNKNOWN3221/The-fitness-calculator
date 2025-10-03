@@ -11,7 +11,7 @@
     <title>Record Details</title>
 </head>
 <body>
-  <%- include('partials/_navbar.ejs') %>
+  <%- include('../partials/_navbar.ejs') %>
   <div class="container">
     <h1>Fitness Record Details</h1>
     <div class="record-details">
@@ -24,7 +24,12 @@
         <span class="label">Body Fat %:</span>
         <span class="value"><%= fatMen %></span>
       </div>
-      <% } %>
+      <% } else { %>
+        <div class="detail-row">
+          <span class="label">Body Fat %:</span>
+          <span class="value"><%= fatWomen %></span>
+        </div>
+       <% } %>
       <div class="detail-row">
         <span class="label">Calories:</span>
         <span class="value"><%= calories %></span>
@@ -45,9 +50,6 @@
         <span class="label">Activity Level:</span>
         <span class="value"><%= record.activityLevel %></span>
       </div>
-      <div class="detail-row">
-        <span class="label">Goal:</span>
-        <span class="value"><%= record.goal %></span>
       </div>
       <div class="detail-row">
         <span class="label">Gender:</span>

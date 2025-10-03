@@ -10,7 +10,7 @@
     <title>Add a new record</title>
 </head>
 <body>
-    <%- include('partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>add a new record</h1>
 
 <form action="/users/<%- user._id %>/calc" method="post">
@@ -35,11 +35,7 @@
         <option value="very active">very activeexercise 6-7 times/week</option>
         <option value="extra active">sendentary</option>
     </select>
-    <select name="goal" id="goal">
-        <option value="cutting">cutting</option>
-        <option value="bulking">bulking</option>
-        <option value="maintanance">maintanance</option>
-    </select>
+  
     <button type="submit">Submit</button>
 </form>
 
