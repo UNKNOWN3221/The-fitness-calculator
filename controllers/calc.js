@@ -115,5 +115,19 @@ router.get('/:calcId/edit',async (req, res) => {
     res.redirect('/')
   }
 })
-
+router.put('/:calcId', async (req, res) => {
+  try {
+    const currentUser = await user.findById(req.session.user._id);
+    const record = currentUser.calc.id(req.params.calcId);
+   
+    record.set(req.body);
+    await currentUser.save();
+    res.redirect(
+      `/users/${currentUser._id}/calc/${req.params.calcId}`
+    );
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
 module.exports = router;

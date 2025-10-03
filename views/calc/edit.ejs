@@ -13,10 +13,16 @@
    <%- include('../partials/_navbar.ejs') %>
     <h1>edit record</h1>
 
-<form action="/users/<%- user._id %>/calc" method="post">
+<form
+    action="/users/<%= user._id %>/calc/<%= record._id %>?_method=PUT"
+    method="POST"
+  >
     
     <label for="Weight">weight:</label>
     <input type="number" name="Weight" id="Weight" value="<%= record.Weight %>">
+
+    <label for="Height">Height:</label>
+    <input type="number" name="Height" id="Height" value="<%= record.Height %>">
 
     <select name="activityLevel" id="activityLevel">
         <option value="sedentary">sedentary</option>
@@ -24,11 +30,6 @@
         <option value="moderate activity">moderate activityexercise 4-5 times/week</option>
         <option value="very active">very active exercise 6-7 times/week</option>
         <option value="extra active">extra active exercise + physical job</option>
-    </select>
-    <select name="goal" id="goal">
-        <option value="cutting">cutting</option>
-        <option value="bulking">bulking</option>
-        <option value="maintanance">maintanance</option>
     </select>
     <button type="submit">Submit</button>
 </form>
