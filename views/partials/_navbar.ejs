@@ -1,9 +1,15 @@
-<nav>
-  <% if(user) { %>
-  <a href="/users/<%= user._id %>/calc">Your Apps</a>
-  <a href="/auth/sign-out">Sign Out</a>
-  <% } else { %>
-  <a href="/auth/sign-in">Sign In</a>
-  <a href="/auth/sign-up">Sign Up</a>
-  <% } %>
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-logo">The fitness calculator</div>
+
+    <div class="nav-links">
+      <% if (user) { %>
+        <a href="/users/<%= user._id %>/calc">Your Apps</a>
+        <a href="/auth/sign-out" class="btn-logout">Sign Out</a>
+      <% } else { %>
+        <a href="/auth/sign-in">Sign In</a>
+        <a href="/auth/sign-up">Sign Up</a>
+      <% } %>
+    </div>
+  </div>
 </nav>

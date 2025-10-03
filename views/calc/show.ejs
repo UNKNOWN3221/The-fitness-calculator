@@ -1,22 +1,69 @@
+<!-- filepath: /home/ahq_292/code/ga/projects/The-fitness-calculator/views/calc/show.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Document</title>
+    <title>Record Details</title>
 </head>
 <body>
-    <label>BMI:</label>
-    <p><%= bmi %></p>
-    <% if (record.gender == 'male') { %>
-     <p><%= fatMen %></p>
-    <% } %>
-        <p><%= calories %></p>
-  
-  <a href="/users/<%= user._id %>/calc">Back to Apps</a>
-  <form action="/users/<%= user._id %>/calc/<%- record._id %>?_method=DELETE" method="post">
-    <button type="submit">Delete record</button>
-  </form>
+  <%- include('partials/_navbar.ejs') %>
+  <div class="container">
+    <h1>Fitness Record Details</h1>
+    <div class="record-details">
+      <div class="detail-row">
+        <span class="label">BMI:</span>
+        <span class="value"><%= bmi %></span>
+      </div>
+      <% if (record.gender == 'male') { %>
+      <div class="detail-row">
+        <span class="label">Body Fat %:</span>
+        <span class="value"><%= fatMen %></span>
+      </div>
+      <% } %>
+      <div class="detail-row">
+        <span class="label">Calories:</span>
+        <span class="value"><%= calories %></span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Age:</span>
+        <span class="value"><%= record.Age %></span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Height:</span>
+        <span class="value"><%= record.Height %> cm</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Weight:</span>
+        <span class="value"><%= record.Weight %> kg</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Activity Level:</span>
+        <span class="value"><%= record.activityLevel %></span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Goal:</span>
+        <span class="value"><%= record.goal %></span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Gender:</span>
+        <span class="value"><%= record.gender %></span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="/users/<%= user._id %>/calc">Back to Apps</a>
+      <form action="/users/<%= user._id %>/calc/<%- record._id %>?_method=DELETE" method="post" style="display:inline;">
+        <button class="btn btn-danger" type="submit">Delete record</button>
+        <a class="btn" href="/users/<%= user._id %>/calc/<%= record._id %>/edit">
+        Edit this application
+    </a>
+      </form>
+      
+    </div>
+  </div>
 </body>
 </html>

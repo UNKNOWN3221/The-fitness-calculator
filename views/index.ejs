@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <title>Home Page</title>
+    <title>Home Page</title>
 </head>
 <body>
-  
+  <%- include('partials/_navbar.ejs') %>
 <% if (user) { %>
-<h1>Welcome to the app, <%= user.username %>!</h1>
-<p>
-  <a href="/auth/sign-out">Sign out</a>
-  <a href="/users/<%= user._id %>/calc">Your Apps</a> 
-</p>
+<h1>Welcome to the fitness calculator website, <%= user.username %>!</h1>
+
 <% } else { %>
 <h1>Welcome to the app, guest.</h1>
 <p>
